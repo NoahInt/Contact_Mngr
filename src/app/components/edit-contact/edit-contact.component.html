@@ -1,0 +1,40 @@
+<div class="container mt-3">
+    <div class="container">
+        <div class="comtainter">
+            <p class="h3 fw-bold">Edit Contact</p>
+            <p>Here you can edit contacts as you wish. First name, last name, phone number and email are all required fields, so please make sure to fill in each field.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Form -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <form (submit)="submitUpdate()">
+                <div class="mb-2">
+                    <input [(ngModel)]="contact.first_name" [value]="contact.first_name" name="first_name" required="true" class="form-control" placeholder="First_Name" type="text">
+                </div>
+                <div class="mb-2">
+                    <input  [(ngModel)]="contact.last_name" [value]="contact.last_name" name="last_name"required="true" class="form-control" placeholder="Last_Name" type="text">
+                </div>
+                <div class="mb-2">
+                    <input [(ngModel)]="contact.phone_number" [value]="contact.phone_number" name="phone_number" required="true" class="form-control" placeholder="Phone_Number" type="number">
+                </div>
+                <div class="mb-2">
+                    <input [(ngModel)]="contact.email" [value]="contact.email" name="email" required="true" class="form-control" placeholder="Email" type="email">
+                </div>
+                <div class="mb-2">
+                    <select class="form-control" [(ngModel)]="contact.groupId" [value]="contact.groupId" name="groupId" required="true">
+                        <option value="">Select a Group</option>
+                        <option [value]="group.id" *ngFor="let group of groups">{{group.name}}</option>
+                    </select>
+                </div>
+                <div class="mb-2">
+                    <input class="btn btn-danger" type="submit" value="Update">
+                    <a class="btn btn-dark ms-2" routerLink="/">Close</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

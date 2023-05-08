@@ -1,0 +1,58 @@
+{
+  "contacts": [
+    {
+      "id": "3",
+      "first_name": "Mike",
+      "last_name": "Russels",
+      "phone_number": "9998887777",
+      "email": "wonders.C@hotmail.com",
+      "groupId": "1"
+    },
+    {
+      "id": "4",
+      "first_name": "Taylor",
+      "last_name": "Whoo",
+      "phone_number": "1092387456",
+      "email": "silly_Whoo@hotmail.com",
+      "groupId": "4"
+    },
+    {
+      "id": "5",
+      "first_name": "Rachel",
+      "last_name": "Charlo",
+      "phone_number": "6675548903",
+      "email": "loCelRa@hotmail.com",
+      "groupId": "4"
+    },
+    {
+      "groupId": "1",
+      "email": "askdfjsl@g.com",
+      "phone_number": 2343423423424,
+      "last_name": "asfdfsf",
+      "first_name": "R",
+      "id": "kfJZAra"
+    }
+  ],
+  "groups": [
+    {
+      "id": "1",
+      "name": "Infants"
+    },
+    {
+      "id": "2",
+      "name": "Toddlers"
+    },
+    {
+      "id": "3",
+      "name": "Child"
+    },
+    {
+      "id": "4",
+      "name": "Adolescent"
+    },
+    {
+      "id": "5",
+      "name": "Adult"
+    }
+  ]
+}

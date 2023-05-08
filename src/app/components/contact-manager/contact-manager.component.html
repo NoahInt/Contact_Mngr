@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="container">
+        <div class="container">
+            <p class="h2">Contacts
+                <a routerLink="/contacts/add" class="btn btn-danger">New Contact</a>
+            </p>
+            <p>This is a list of all contacts. You may add, delete and edit your contacts list. The only other feature you have is to view the individual contacts.</p>
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Search Contacts">
+                            </div>
+                            <div class="col">
+                                <input type="submit" class="btn btn-outline-dark" value="Search">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--Loading -->
+
+<div *ngIf="loading">
+    <app-spinner></app-spinner>
+</div>
+
+<!-- Error Message
+<div *ngIf="!loading && errorMessage">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p class="h4 text-danger fw-bold">{{errorMessage}}</p>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- Cards -->
+<div *ngIf="!loading && contacts.length > 0" class="container mt-3">
+    <div class="row">
+        <div *ngFor="let contact of contacts" class="col-md-6">
+            <div class="card list-group-item-danger shadow-lg my-2">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-sm-8">
+                            <ul class="list-group">
+                                <li class="list-group-item">First Name : <span class="fw-bold">{{contact.first_name}}</span></li>
+                                <li class="list-group-item">Last Name : <span class="fw-bold">{{contact.last_name}}</span></li>
+                                <li class="list-group-item">Phone Number : <span class="fw-bold">{{contact.phone_number}}</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-2 d-flex flex-column justify-content-center align-items-center">
+                            <a routerLink="/contacts/view/{{contact.id}}" class="btn btn-warning my-1">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                            <a routerLink="/contacts/edit/{{contact.id}}" class="btn btn-primary my-1">
+                                <i class="fa fa-pen"></i>
+                            </a>
+                            <button class="btn btn-danger my-1" (click)="clickDeleteContact(contact.id)">
+                                <i class="fa fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
